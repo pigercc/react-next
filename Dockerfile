@@ -10,7 +10,7 @@ RUN npm run build
 
 # stage 1 deploy to nginx
 FROM nginx:1.17
-COPY --from=build-stage /app/build/ /usr/share/nginx/html
+COPY --from=build-stage /app/out/ /usr/share/nginx/html
 #如果有自定义的ngx配置
 #COPY --from=build-stage /app/nginx.conf /etc/nginx/conf.d/default.conf
 
